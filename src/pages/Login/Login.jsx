@@ -45,7 +45,9 @@ export default function Login() {
               setValue={setTempPassword}
               value={tempPassword}
             />
-            <ButtonComponent text="Login" type="submit" />
+            <div className="mt-3">
+              <ButtonComponent text="Login" type="submit" />
+            </div>
           </form>
         </div>
       </div>

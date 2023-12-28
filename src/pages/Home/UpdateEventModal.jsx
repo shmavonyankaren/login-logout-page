@@ -13,7 +13,8 @@ export default function UpdateEventModal({ currentValue, currentImage, id }) {
   const [event, setEvent] = useState(currentValue);
   const [image, setImage] = useState(currentImage);
   const dispatch = useDispatch();
-  const updateFunc = () => {
+  const updateFunc = (e) => {
+    e.preventDefault();
     dispatch(
       updateEvent({
         id,
@@ -47,31 +48,29 @@ export default function UpdateEventModal({ currentValue, currentImage, id }) {
           <Modal.Title>Information about product</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <div>
-            <InputComponents
-              type="text"
-              text="Event"
-              placeholderText="Your event name"
-              setValue={setEvent}
-              value={event}
-            />
-          </div>
-          <div>
-            <InputComponents
-              type="text"
-              text="Image"
-              placeholderText="Your image link"
-              setValue={setImage}
-              value={image}
-            />
-          </div>
+          <form onSubmit={updateFunc} id="form">
+            <div>
+              <InputComponents
+                type="text"
+                text="Event"
+                placeholderText="Your event name"
+                setValue={setEvent}
+                value={event}
+              />
+            </div>
+            <div>
+              <InputComponents
+                type="text"
+                text="Image"
+                placeholderText="Your image link"
+                setValue={setImage}
+                value={image}
+              />
+            </div>
+          </form>
         </Modal.Body>
         <Modal.Footer>
-          <ButtonComponent
-            text="Update Event"
-            type="button"
-            onClickHandler={updateFunc}
-          />
+          <ButtonComponent text="Update Event" type="submit" form="form" />
           <ButtonComponent
             text="Delete Event"
             type="button"

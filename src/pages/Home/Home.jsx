@@ -6,7 +6,7 @@ import Header from "./Header";
 export default function Home() {
   return (
     <div className="bg-gray-200 min-h-screen">
-      <Header />
+      <Header />\
       <div className="min-h-full">
         <Routes>
           <Route path="/" element={<Events />} />

@@ -10,7 +10,7 @@ export default function EventList({ searchingEvent }) {
       return events.filter((event) => event.value === searchingEvent);
     };
     setNewEvents(searchFunc());
-  }, [searchingEvent]);
+  }, [searchingEvent, events]);
   return (
     <div className="flex flex-wrap justify-center mt-3 border-spacing-1 rounded-xl py-3">
       {searchingEvent

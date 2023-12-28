@@ -8,9 +8,11 @@ export default function Events() {
   const [value, setValue] = useState("");
 
   return (
-    <div className="">
-      <Preview />
-      <div className="flex justify-center mt-2">
+    <div>
+      <div>
+        <Preview />
+      </div>
+      <div className="flex justify-center mt-">
         <SearchEvent value={value} setValue={setValue} />
         <AddEvent />
       </div>
