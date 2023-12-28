@@ -1,10 +1,10 @@
 import React from "react";
 import Modal from "react-bootstrap/Modal";
 import { useState } from "react";
-import ButtonComponent from "../../components/LoginButtonComponent";
+import ButtonComponent from "../../components/ButtonComponent";
 import { deletEvent, updateEvent } from "../../redux/events/eventsSlice";
 import { useDispatch } from "react-redux";
-import InputComponents from "../../components/LoginInputComponents";
+import InputComponents from "../../components/InputComponents";
 
 export default function UpdateEventModal({ currentValue, currentImage, id }) {
   const [show, setShow] = useState(false);

@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import ButtonComponent from "../../components/LoginButtonComponent";
+import ButtonComponent from "../../components/ButtonComponent";
 import {
   changeEmail,
   changePassword,

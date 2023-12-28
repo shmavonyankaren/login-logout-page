@@ -1,10 +1,10 @@
 import React from "react";
 import Modal from "react-bootstrap/Modal";
 import { useState } from "react";
-import ButtonComponent from "../../components/LoginButtonComponent";
+import ButtonComponent from "../../components/ButtonComponent";
 import { addEvent } from "../../redux/events/eventsSlice";
 import { useDispatch } from "react-redux";
-import InputComponents from "../../components/LoginInputComponents";
+import InputComponents from "../../components/InputComponents";
 
 export default function AddEventModal() {
   const [show, setShow] = useState(false);
@@ -13,7 +13,8 @@ export default function AddEventModal() {
   const [event, setEvent] = useState("");
   const [image, setImage] = useState("");
   const dispatch = useDispatch();
-  const addFunc = () => {
+  const addFunc = (e) => {
+    e.preventDefault();
     dispatch(
       addEvent({
         id: Math.random(),
@@ -42,31 +43,29 @@ export default function AddEventModal() {
           <Modal.Title>Information about product</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <div>
-            <InputComponents
-              type="text"
-              text="Event"
-              placeholderText="Your event name"
-              setValue={setEvent}
-              value={event}
-            />
-          </div>
-          <div>
-            <InputComponents
-              type="text"
-              text="Image"
-              placeholderText="Your image link"
-              setValue={setImage}
-              value={image}
-            />
-          </div>
+          <form onSubmit={addFunc} id="form">
+            <div>
+              <InputComponents
+                type="text"
+                text="Event"
+                placeholderText="Your event name"
+                setValue={setEvent}
+                value={event}
+              />
+            </div>
+            <div>
+              <InputComponents
+                type="text"
+                text="Image"
+                placeholderText="Your image link"
+                setValue={setImage}
+                value={image}
+              />
+            </div>
+          </form>
         </Modal.Body>
         <Modal.Footer>
-          <ButtonComponent
-            text="Add Event"
-            type="button"
-            onClickHandler={addFunc}
-          />
+          <ButtonComponent form="form" text="Add Event" type="submit" />
         </Modal.Footer>
       </Modal>
     </div>
