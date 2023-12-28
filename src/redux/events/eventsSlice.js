@@ -14,7 +14,7 @@ const reducers = {
   updateEvent: (state, action) => {
     state.events = state.events.map((event) => {
       if (event.id === action.payload.id) {
-        return action.payload.value;
+        return action.payload;
       }
 
       return event;
