@@ -4,6 +4,7 @@ import { useState } from "react";
 import ButtonComponent from "../../components/ButtonComponent";
 import { deletEvent, updateEvent } from "../../redux/events/eventsSlice";
 import { useDispatch } from "react-redux";
+import { GrUpdate } from "react-icons/gr";
 import InputComponents from "../../components/InputComponents";
 
 export default function UpdateEventModal({ currentValue, currentImage, id }) {
@@ -31,11 +32,9 @@ export default function UpdateEventModal({ currentValue, currentImage, id }) {
   return (
     <div>
       <div className="mb-0 flex">
-        <ButtonComponent
-          text="Update"
-          type="button"
-          onClickHandler={handleShow}
-        />
+        <button className="pr-[30px]" onClick={handleShow}>
+          <GrUpdate size="30px" />
+        </button>
       </div>
       <Modal
         show={show}

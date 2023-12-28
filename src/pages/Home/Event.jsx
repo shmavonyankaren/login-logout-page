@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import ButtonComponent from "../../components/ButtonComponent";
+import { MdAutoDelete } from "react-icons/md";
 import { deletEvent } from "../../redux/events/eventsSlice";
 import UpdateEventModal from "./UpdateEventModal";
 
@@ -23,13 +23,17 @@ export default function Event({ event }) {
           <p className="text-lg text-black font-semibold">{value}</p>
         </div>
         <div className="flex">
-          <UpdateEventModal currentValue={value} currentImage={image} id={id} />
-          <div className="ml-4">
-            <ButtonComponent
-              type="button"
-              text="Delete"
-              onClickHandler={deleteFunc}
+          <div className="ml-9">
+            <UpdateEventModal
+              currentValue={value}
+              currentImage={image}
+              id={id}
             />
+          </div>
+          <div className="ml-4">
+            <button onClick={deleteFunc}>
+              <MdAutoDelete size="35px" />
+            </button>
           </div>
         </div>
       </div>

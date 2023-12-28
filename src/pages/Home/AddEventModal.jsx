@@ -5,6 +5,7 @@ import ButtonComponent from "../../components/ButtonComponent";
 import { addEvent } from "../../redux/events/eventsSlice";
 import { useDispatch } from "react-redux";
 import InputComponents from "../../components/InputComponents";
+import { MdAssignmentAdd } from "react-icons/md";
 
 export default function AddEventModal() {
   const [show, setShow] = useState(false);
@@ -30,7 +31,9 @@ export default function AddEventModal() {
   return (
     <div>
       <div className="mb-0 flex">
-        <ButtonComponent text="+" type="button" onClickHandler={handleShow} />
+        <button onClick={handleShow}>
+          <MdAssignmentAdd size="45px" />
+        </button>
       </div>
       <Modal
         show={show}
