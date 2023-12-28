@@ -28,7 +28,7 @@ export default function Header() {
         <h1 className="pl-5 text-black font-semibold text-4xl">Events</h1>
       </div>
       <div className="flex flex-1 justify-end">
-        <div className="mr-3">
+        <div className="flex items-center mr-3">
           <ButtonComponent
             type="button"
             text="Log Out"
