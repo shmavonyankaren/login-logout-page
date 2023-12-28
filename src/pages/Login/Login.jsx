@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import ButtonComponent from "../components/LoginButtonComponent";
-import InputComponents from "../components/LoginInputComponents";
-import share from "../assets/share.mp4";
+import ButtonComponent from "../../components/LoginButtonComponent";
+import InputComponents from "../../components/LoginInputComponents";
+import share from "../../assets/share.mp4";
 import {
   changeEmail,
   changePassword,
   loginUser,
-} from "../redux/user/userSlice";
+} from "../../redux/user/userSlice";
 
 export default function Login() {
   const [tempEmail, setTempEmail] = useState("");

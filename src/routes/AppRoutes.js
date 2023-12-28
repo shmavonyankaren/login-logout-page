@@ -1,8 +1,8 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import { LoginRouteWrapper } from "./LoginRouteWraper";
 import { ProtectedRoute } from "./MainRouteWraper";
-import Login from "../pages/Login";
-import Main from "../pages/Main";
+import Login from "../pages/Login/Login";
+import Home from "../pages/Home/Home";
 
 function AppRoutes() {
   return (
@@ -11,8 +11,8 @@ function AppRoutes() {
         <Route index element={<Login />} />
       </Route>
       <Route path="/" element={<ProtectedRoute />}>
-        <Route index element={<Navigate to="/main" />} />
-        <Route path="/main" element={<Main />} />
+        <Route index element={<Navigate to="/home" />} />
+        <Route path="/home" element={<Home />} />
       </Route>
     </Routes>
   );

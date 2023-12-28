@@ -6,7 +6,7 @@ export const LoginRouteWrapper = () => {
   const { isLoggedIn } = useSelector((state) => state.user);
 
   if (isLoggedIn) {
-    return <Navigate to="/main" />;
+    return <Navigate to="/home" />;
   }
 
   return <Outlet />;
