@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import AppRoutes from "./routes/AppRoutes";
+import { loginUser } from "./redux/user/userSlice";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const val = window.localStorage.getItem("loggedIn");
+    if (val && val === "yes") {
+      dispatch(loginUser());
+    }
+  }, [dispatch]);
+
+  return <AppRoutes />;
 }
 
 export default App;
