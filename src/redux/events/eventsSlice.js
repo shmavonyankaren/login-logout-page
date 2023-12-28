@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = { events: [] };
+const initialState = { events: [], tempEvents: [] };
 
 const reducers = {
   addEvent: (state, action) => {
@@ -17,9 +17,6 @@ const reducers = {
 
       return event;
     });
-  },
-  searchEvent: (state, action) => {
-    return state.events.filter((event) => event.id === action.payload.id);
   },
 };
 

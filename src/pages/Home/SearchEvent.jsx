@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import SearchInput from "../../components/SearchInput";
 
-export default function SearchEvent() {
-  const [value, setValue] = useState("");
+export default function SearchEvent({ value, setValue }) {
   return (
-    <div>
+    <div className="mr-3">
       <SearchInput value={value} setValue={setValue} />
     </div>
   );

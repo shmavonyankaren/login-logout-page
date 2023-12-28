@@ -1,12 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import AddEvent from "./AddEvent";
 import EventList from "./EventList";
+import SearchEvent from "./SearchEvent";
+import Preview from "./Preview";
 
 export default function Events() {
+  const [value, setValue] = useState("");
+
   return (
     <div className="">
-      <AddEvent />
-      <EventList />
+      <Preview />
+      <div className="flex justify-center mt-2">
+        <SearchEvent value={value} setValue={setValue} />
+        <AddEvent />
+      </div>
+      <EventList searchingEvent={value} />
     </div>
   );
 }
