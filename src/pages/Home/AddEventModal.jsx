@@ -13,6 +13,18 @@ export default function AddEventModal() {
   const [event, setEvent] = useState("");
   const [image, setImage] = useState("");
   const dispatch = useDispatch();
+  const addFunc = () => {
+    dispatch(
+      addEvent({
+        id: Math.random(),
+        value: event,
+        image: image,
+      })
+    );
+    setEvent("");
+    setImage("");
+    handleClose();
+  };
 
   return (
     <div>
@@ -53,17 +65,7 @@ export default function AddEventModal() {
           <ButtonComponent
             text="Add Event"
             type="button"
-            onClickHandler={() => {
-              dispatch(
-                addEvent({
-                  id: Math.random(),
-                  value: event,
-                  image: image,
-                })
-              );
-              setEvent("");
-              handleClose();
-            }}
+            onClickHandler={addFunc}
           />
         </Modal.Footer>
       </Modal>

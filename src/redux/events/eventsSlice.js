@@ -7,9 +7,7 @@ const reducers = {
     state.events.push(action.payload);
   },
   deletEvent: (state, action) => {
-    state.events = state.events.filter(
-      (event) => event.id !== action.payload.id
-    );
+    state.events = state.events.filter((event) => event.id !== action.payload);
   },
   updateEvent: (state, action) => {
     state.events = state.events.map((event) => {

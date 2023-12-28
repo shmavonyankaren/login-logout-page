@@ -2,7 +2,7 @@ import React from "react";
 import Modal from "react-bootstrap/Modal";
 import { useState } from "react";
 import ButtonComponent from "../../components/LoginButtonComponent";
-import { updateEvent } from "../../redux/events/eventsSlice";
+import { deletEvent, updateEvent } from "../../redux/events/eventsSlice";
 import { useDispatch } from "react-redux";
 import InputComponents from "../../components/LoginInputComponents";
 
@@ -13,6 +13,19 @@ export default function UpdateEventModal({ currentValue, currentImage, id }) {
   const [event, setEvent] = useState(currentValue);
   const [image, setImage] = useState(currentImage);
   const dispatch = useDispatch();
+  const updateFunc = () => {
+    dispatch(
+      updateEvent({
+        id,
+        value: event,
+        image: image,
+      })
+    );
+    handleClose();
+  };
+  const deleteFunc = () => {
+    dispatch(deletEvent(id));
+  };
 
   return (
     <div>
@@ -57,16 +70,12 @@ export default function UpdateEventModal({ currentValue, currentImage, id }) {
           <ButtonComponent
             text="Update Event"
             type="button"
-            onClickHandler={() => {
-              dispatch(
-                updateEvent({
-                  id,
-                  value: event,
-                  image: image,
-                })
-              );
-              handleClose();
-            }}
+            onClickHandler={updateFunc}
+          />
+          <ButtonComponent
+            text="Delete Event"
+            type="button"
+            onClickHandler={deleteFunc}
           />
         </Modal.Footer>
       </Modal>
