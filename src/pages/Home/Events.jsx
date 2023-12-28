@@ -16,7 +16,9 @@ export default function Events() {
         <SearchEvent value={value} setValue={setValue} />
         <AddEvent />
       </div>
-      <EventList searchingEvent={value} />
+      <div className="rounded-lg bg-gray-100/90 m-4">
+        <EventList searchingEvent={value} />
+      </div>
     </div>
   );
 }
