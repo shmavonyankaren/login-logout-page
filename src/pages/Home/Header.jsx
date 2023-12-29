@@ -18,7 +18,7 @@ export default function Header() {
   };
 
   return (
-    <div className=" fixed w-[100%] flex pb-3  bg-slate-300 opacity-90 hover:opacity-100">
+    <div className="fixed w-[100%] flex pb-3  bg-slate-300 opacity-90 hover:opacity-100">
       <div className="flex justify-center items-center">
         <img
           className="max-h-[60px] min-h-[60px] max-w-[100px] min-w-[100px]"
